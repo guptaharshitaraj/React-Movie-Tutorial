@@ -1,13 +1,10 @@
 import React from 'react'
 import MovieCard from './components/MovieCard'
-
+import Home from './pages/Home'
 const App = () => {
   return (
     <div>
-      <MovieCard movie={{ url: 'https://www.posterized.in/products/american-psycho-american-psycho-movie-poster', 
-        title: 'Example Movie',
-        release_date: '2000-10-13'
-      }} />
+     <Home/>
     </div>
   )
 }
