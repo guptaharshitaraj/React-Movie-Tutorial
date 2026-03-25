@@ -2,17 +2,18 @@ import React from 'react'
 import MovieCard from '../components/MovieCard' 
 const Home = () => {
     const movies=[{
-      id:1,title:"The Shawshank Redemption",year:1994,genre:"Drama",rating:9.3
+      id:1,title:"The Shawshank Redemption",release_date:1994
     },{
-      id:2,title:"The Godfather",year:1972,genre:"Crime",rating:9.2
+      id:2,title:"The Godfather",release_date:1972
     },{
-      id:3,title:"The Dark Knight",year:2008,genre:"Action",rating:9.0
+      id:3,title:"The Dark Knight",release_date:2008
     }];
   return (
     <div className='Home'>
+     
       <div className='movies-grid'>
         {movies.map(movie=>{
-          <MovieCard movie={movie} key={movie.id}/>
+           return <MovieCard movie={movie} key={movie.id}/>;
 
         })}
       </div>
