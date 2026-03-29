@@ -2,6 +2,7 @@ import React from 'react'
 import { Routes ,Route} from 'react-router-dom'
 import Favourites from './pages/Favourites'
 import Home from './pages/Home'
+import Navbar from './components/Navbar'
 const App = () => {
   return (
     <div>
