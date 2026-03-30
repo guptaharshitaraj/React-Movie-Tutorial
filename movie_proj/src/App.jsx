@@ -6,10 +6,11 @@ import Navbar from './components/Navbar'
 const App = () => {
   return (
     <div>
-      {<Routes>
+      <Navbar/>
+      <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/favourites" element={<Favourites/>}/>
-      </Routes> }
+      </Routes> 
         
     </div>
   )
