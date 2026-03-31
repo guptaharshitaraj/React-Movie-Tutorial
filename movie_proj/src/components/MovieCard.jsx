@@ -1,5 +1,5 @@
 import React from 'react'
-
+import '../css/MovieCard.css'
 const MovieCard = ({movie}) => {
     function onFavouriteClick() {
         console.log('Favourite button clicked for movie:', movie.title);
