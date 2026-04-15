@@ -43,13 +43,15 @@ loadPopularMovies();
      <input type="text" placeholder="Search movies..." value={searchQuery} onChange={(e)=>setsearchQuery(e.target.value)}/>
      <button type="submit">Search</button>
      </form>
-      <div className='movies-grid'>
+     {error && <div className='error'>{error}</div>}
+     {loading ?(<div className='loading'>Loading...</div>):(  <div className='movies-grid'>
         {movies.map((movie)=>{
         return movie.title.toLowerCase().includes(searchQuery.toLowerCase()) && (<MovieCard movie={movie} key={movie.id}/> );
 
 
         })}
-      </div>
+      </div>)}
+    
     </div>
   )
 }
