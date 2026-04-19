@@ -32,9 +32,25 @@ useEffect(()=>{
 loadPopularMovies();
 },[]);
 
-    const handleSearch=(e)=>{
+    const handleSearch=async (e)=>{
       e.preventDefault()
     // alert(searchQuery);
+    if(!searchQuery.trim()) return;
+    if(loading) return;
+       setLoading(true);
+    try{
+      const searchResults=await searchURLmovies(searchQuery);
+      setMovies(searchResults);
+      setError(null);
+    }
+    catch(err){
+      console.log(err);
+      setError("Failed to search movies. Please try again later.");
+    }
+    finally{
+      setLoading(false);
+    }
+ 
      setsearchQuery("");
     }
   return (
@@ -46,9 +62,11 @@ loadPopularMovies();
      {error && <div className='error'>{error}</div>}
      {loading ?(<div className='loading'>Loading...</div>):(  <div className='movies-grid'>
         {movies.map((movie)=>{
-        return movie.title.toLowerCase().includes(searchQuery.toLowerCase()) && (<MovieCard movie={movie} key={movie.id}/> );
+        //return movie.title.toLowerCase().includes(searchQuery.toLowerCase()) && (<MovieCard movie={movie} key={movie.id}/> 
 
+        //);
 
+return <MovieCard movie={movie} key={movie.id}/>
         })}
       </div>)}
     

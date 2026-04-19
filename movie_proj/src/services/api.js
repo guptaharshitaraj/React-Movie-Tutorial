@@ -9,7 +9,7 @@ return data.results;
 };
 
 export const searchURLmovies= async(query)=>{
-const response= await fetch(`${BASE_URL}/movie/search?api_key=${API_KEY}&query=${query}`);
+const response= await fetch(`${BASE_URL}/search/movie?api_key=${API_KEY}&query=${query}`);
 const data= await response.json();
 console.log(data);
 return data.results;
